@@ -2,13 +2,13 @@
   <nz-sider class="menu-sidebar" [class.collapsed]="!isCollapsed" nzCollapsible nzWidth="180px" nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <ul class="menu-list" nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-menu-item>
+      <li  routerLink="/" nz-menu-item>
         <nz-icon nzType="container" />
-        <span routerLink="/">Sipariş Kontrol</span>
+        <span>Sipariş Kontrol</span>
       </li>
-      <li nz-menu-item>
+      <li routerLink="title-documents"  nz-menu-item>
         <nz-icon nzType="rocket" />
-        <span routerLink="title-documents">Kargo Kontrol</span>
+        <span >Kargo Kontrol</span>
       </li>
       <li nz-menu-item>
         <nz-icon nzType="team" />

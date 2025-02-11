@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import * as go from 'gojs';
-import { DiagramComponent } from 'gojs-angular';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
@@ -13,7 +12,7 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
     templateUrl: './title-documents.component.html',
     styleUrls: ['./title-documents.component.css'],
     imports: [
-        DiagramComponent, NzModalModule, CommonModule, NzButtonModule, NzUploadModule
+      NzModalModule, CommonModule, NzButtonModule, NzUploadModule
     ],
 })
 export class TitleDocumentsComponent implements AfterViewInit {
