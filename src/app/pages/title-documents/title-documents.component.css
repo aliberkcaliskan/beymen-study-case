@@ -1,0 +1,42 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  background: white;
+}
+.upload-button {
+  padding-bottom: 20px;
+  display: block;
+}
+.upload-section {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.custom-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1890ff;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.custom-upload-button:hover {
+  background-color: #40a9ff;
+}
+
+.custom-upload-button nz-icon {
+  margin-right: 8px;
+}
+
+input[type="file"] {
+  display: none;
+}

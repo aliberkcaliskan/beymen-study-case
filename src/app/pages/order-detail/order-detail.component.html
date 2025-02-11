@@ -1,0 +1,51 @@
+<nz-card class="card" *ngIf="!loading; else loadingTemplate" nzTitle="Sipariş Detayları" [nzBordered]="true">
+  <div class="order-container">
+    <div class="order-info">
+      <div class="order-row">
+        <strong>Sipariş No:</strong>
+        <span>{{ orderData?.orderNo }}</span>
+      </div>
+      <div class="order-row">
+        <strong>Gönderi Takip No:</strong>
+        <span>{{ orderData?.shipmentTrackingNo }}</span>
+      </div>
+      <div class="order-row">
+        <strong>Sipariş Takip No:</strong>
+        <span>{{ orderData?.orderTrackingNo }}</span>
+      </div>
+      <div class="order-row">
+        <strong>Müşteri Adı:</strong>
+        <span>{{ orderData?.customerName }}</span>
+      </div>
+      <div class="order-row">
+        <strong>İlçe:</strong>
+        <span>{{ orderData?.district }}</span>
+      </div>
+      <div class="order-row">
+        <strong>Plaka:</strong>
+        <span>{{ orderData?.plate }}</span>
+      </div>
+      <div class="order-row">
+        <strong>Dağıtım Durumu:</strong>
+        <span>{{ orderData?.releasedForDistribution }}</span>
+      </div>
+      <div class="order-row">
+        <strong>Durum:</strong>
+        <nz-tag [nzColor]="getStatusColor(orderData?.Statu)">
+          {{ getStatusText(orderData?.Statu) }}
+        </nz-tag>
+      </div>
+      <div class="order-row">
+        <strong>Tarih:</strong>
+        <span>{{ orderData?.Date | date: 'dd.MM.yyyy HH:mm' }}</span>
+      </div>
+    </div>
+    <div class="back-button">
+      <button nz-button nzType="default" routerLink="/">Geri Dön</button>
+    </div>
+  </div>
+</nz-card>
+
+<ng-template #loadingTemplate>
+  <nz-spin nzTip="Yükleniyor..." class="loading-spinner"></nz-spin>
+</ng-template>

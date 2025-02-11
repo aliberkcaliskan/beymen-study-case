@@ -1,0 +1,56 @@
+.dashboard-container {
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+  background: #f0f2f5;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.stat-card p {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.stat-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.completion-bar {
+  text-align: center;
+  padding: 20px 0px;
+  position: relative;
+}
+
+.completion-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    gap: 20px;
+  }
+  .completion-text {
+    font-size: 12px;
+    top: 25px;
+  }
+}

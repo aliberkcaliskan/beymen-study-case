@@ -1,0 +1,54 @@
+<form class="form-container" [formGroup]="filterForm">
+  <nz-row [nzGutter]="12" class="filter-row">
+    <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="6">
+      <nz-input-group [nzPrefix]="prefixSearch">
+        <input type="text" nz-input placeholder="Gönderi Takip Numarası" formControlName="trackingNumber" />
+      </nz-input-group>
+      <ng-template #prefixSearch>
+        <nz-icon nzType="search"></nz-icon>
+      </ng-template>
+    </nz-col>
+
+    <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="6">
+      <nz-input-group [nzPrefix]="prefixSearch">
+        <input type="text" nz-input placeholder="Sipariş Numarası" formControlName="orderNumber" />
+      </nz-input-group>
+    </nz-col>
+
+    <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="6">
+      <nz-input-group [nzPrefix]="prefixSearch">
+        <input type="text" nz-input placeholder="Plaka" formControlName="plate" />
+      </nz-input-group>
+    </nz-col>
+
+    <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="6">
+      <nz-range-picker class="w-100" [nzFormat]="'dd-MM-yyyy'" [nzPlaceHolder]="['Başlangıç Tarihi', 'Bitiş Tarihi']"
+        formControlName="dateRange">
+      </nz-range-picker>
+    </nz-col>
+  </nz-row>
+
+  <nz-row [nzGutter]="16" class="filter-row">
+    <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="6">
+      <nz-select class="w-100" nzPlaceHolder="Durum" formControlName="status">
+        <nz-option nzLabel="Oluşturuldu" nzValue="0"></nz-option>
+        <nz-option nzLabel="İptal Edildi" nzValue="1"></nz-option>
+        <nz-option nzLabel="Teslim Edildi" nzValue="2"></nz-option>
+        <nz-option nzLabel="Bekliyor" nzValue="3"></nz-option>
+        <nz-option nzLabel="Teslim Edilemedi" nzValue="4"></nz-option>
+      </nz-select>
+    </nz-col>
+
+    <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="6">
+      <nz-select class="w-100" nzPlaceHolder="Dağıtım Durumu" formControlName="distributionStatus">
+        <nz-option nzLabel="Evet" nzValue="EVET"></nz-option>
+        <nz-option nzLabel="Hayır" nzValue="HAYIR"></nz-option>
+      </nz-select>
+    </nz-col>
+
+    <nz-col class="submit-area" nzXs="24" nzSm="24" nzMd="24" nzLg="12">
+      <button class="submit-button w-100" nz-button nzType="default" (click)="resetFilter()">Temizle</button>
+      <button class="submit-button w-100" nz-button nzType="primary" (click)="applyFilter()">Filtrele</button>
+    </nz-col>
+  </nz-row>
+</form>

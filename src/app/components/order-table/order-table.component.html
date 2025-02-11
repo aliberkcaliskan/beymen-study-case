@@ -1,0 +1,37 @@
+<nz-table #basicTable [nzBordered]="true" [nzData]="tableData" [nzLoading]="loading" [nzPageSize]="pageSize"
+  [nzPageIndex]="pageNumber" [nzShowPagination]="true" [nzTotal]="totalRecords" [nzPaginationPosition]="'bottom'"
+  (nzPageIndexChange)="onPageChange($event)"  [nzScroll]="{ x: '1000px' }" [nzBordered]="true" nzFrontPagination="false"
+  [nzNoResult]="'Veri Bulunamadı'">
+  <thead>
+    <tr>
+      <th nzWidth="10%">Sipariş No</th>
+      <th nzWidth="15%">Gönderi Takip No</th>
+      <th nzWidth="15%">Sipariş Takip No</th>
+      <th nzWidth="15%">Müşteri Adı</th>
+      <th nzWidth="10%">İlçe</th>
+      <th nzWidth="10%">Plaka</th>
+      <th nzWidth="10%">Dağıtıma Çıkarıldı</th>
+      <th nzWidth="15%">Durum</th>
+      <th nzWidth="10%">Tarih</th>
+      <th nzWidth="10%">Detay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of tableData">
+      <td>{{ data.orderNo }}</td>
+      <td>{{ data.shipmentTrackingNo }}</td>
+      <td>{{ data.orderTrackingNo }}</td>
+      <td>{{ data.customerName }}</td>
+      <td>{{ data.district }}</td>
+      <td>{{ data.plate }}</td>
+      <td>{{ data.releasedForDistribution }}</td>
+      <td class="flex-center">
+        <nz-tag [nzColor]="getStatusColor(data.Statu)">{{ getStatusText(data.Statu) }}</nz-tag>
+      </td>
+      <td>{{ data.Date | date:'dd.MM.yyyy HH:mm' }}</td>
+      <td>
+        <button nz-button nzType="primary" (click)="goToDetails(data.orderNo)">Detay</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

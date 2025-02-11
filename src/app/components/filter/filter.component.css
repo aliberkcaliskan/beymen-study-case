@@ -1,0 +1,42 @@
+.form-container {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+.filter-row nz-col {
+  margin-top: 10px;
+}
+.submit-area {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.submit-button {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .submit-button {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .filter-row {
+    display: flex;
+    gap: 0px;
+  }
+  .filter-row nz-col {
+    width: 100%;
+  }
+}

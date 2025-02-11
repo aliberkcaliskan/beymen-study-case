@@ -1,0 +1,18 @@
+<div #diagramDiv style="width: 100%; height: 100vh; min-height: 100% lightgray;"></div>
+
+<nz-modal [(nzVisible)]="isModalVisible" nzTitle="PDF Görüntüle1" (nzOnCancel)="handleCancel()" [nzFooter]="null">
+  <ng-container *nzModalContent>
+    <div class="upload-section">
+      <label for="pdfUpload" class="custom-upload-button">
+        <nz-icon nzType="upload"></nz-icon> PDF Yükle
+      </label>
+      <input type="file" id="pdfUpload" accept="application/pdf" (change)="uploadNewPdf($event)">
+    </div>
+    <iframe *ngIf="!uploadedPdfUrl && selectedPdf"
+      src="https://static.stlflix.com/Low_Poly_Unicorn_Table_Lamp_2dd9695846.pdf" width="100%" height="500px"></iframe>
+    <iframe *ngIf="uploadedPdfUrl" [src]="uploadedPdfUrl" width="100%" height="500px">
+    </iframe>
+
+  </ng-container>
+
+</nz-modal>

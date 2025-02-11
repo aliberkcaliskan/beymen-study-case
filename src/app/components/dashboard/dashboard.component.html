@@ -1,0 +1,41 @@
+<nz-row [nzGutter]="16" class="dashboard-container">
+  <nz-col [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="6" [nzXl]="4">
+    <nz-card class="stat-card">
+      <p>Rotadaki Paket</p>
+      <h2 [style.color]="getStatusColor('packetRoute')">{{ headerData?.packetRoute || 0 }}</h2>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="6" [nzXl]="4">
+    <nz-card class="stat-card">
+      <p>DM Paket Sayısı</p>
+      <h2 [style.color]="getStatusColor('DMPackageCount')">{{ headerData?.DMPackageCount || 0 }}</h2>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="6" [nzXl]="4">
+    <nz-card class="stat-card">
+      <p>Dağıtıma Çıkan Paket</p>
+      <h2 [style.color]="getStatusColor('packageReleased')">{{ headerData?.packageReleased || 0 }}</h2>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="6" [nzXl]="4">
+    <nz-card class="stat-card">
+      <p>Teslim Edildi</p>
+      <h2 [style.color]="getStatusColor('delivered')">{{ headerData?.delivered || 0 }}</h2>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="6" [nzXl]="4">
+    <nz-card class="stat-card">
+      <p>Teslim Edilemedi</p>
+      <h2 [style.color]="getStatusColor('notDelivered')">{{ headerData?.notDelivered || 0 }}</h2>
+    </nz-card>
+  </nz-col>
+</nz-row>
+
+<div class="completion-bar">
+  <nz-progress [nzPercent]="getCompletionPercentage()" [nzStrokeWidth]="30" [nzShowInfo]="false" nzStatus="active"
+    nzStrokeColor="#52c41a">
+  </nz-progress>
+  <span class="completion-text">
+    TAMAMLANAN SİPARİŞ {{ headerData?.completedOrder }}
+  </span>
+</div>

@@ -1,0 +1,150 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+  height: 100%;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+}
+
+.header-trigger {
+  height: 64px;
+  padding: 20px 24px;
+  font-size: 20px;
+
+  transition: all 0.3s, padding 0s;
+}
+.trigger {
+  cursor: pointer;
+}
+.trigger:hover {
+  color: #1890ff;
+}
+
+menu-sidebar {
+  height: 100%;
+}
+
+nz-header {
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0% 0%;
+  height: 100%;
+}
+.menu-list li {
+  padding: 0px 30px !important;
+}
+.app-header {
+  position: relative;
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+.header-item:last-child {
+  justify-content: flex-end;
+}
+.header-trigger {
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.header-trigger span {
+  font-family: 20px;
+}
+.logo-area {
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.logo-area img {
+  height: 100%;
+  width: 200px;
+}
+.user-area a {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 600;
+}
+.user-area {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+nz-content {
+  margin: 24px;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .search,
+  .header-trigger span,
+  .header-trigger .star {
+    display: none;
+  }
+  .logo-area img {
+    height: 100%;
+    width: 150px;
+  }
+
+  .inner-content {
+    padding: 12px;
+    background: #fff;
+    height: 100%;
+  }
+  nz-content {
+    margin: 12px;
+  }
+  .menu-sidebar.collapsed {
+    position: fixed;
+    height: 100%;
+  }
+ .app-header {
+    padding: 0px 10px 0px 10px;
+  }
+  .collapsed.app-header {
+    padding-left: 90px;
+  }
+  .header-trigger {
+    transition: all 0.3s;
+  }
+  .header-trigger .collapsed {
+    padding-left: 100px;
+    transition: all 0.3s;
+  }
+}
+@media (max-width: 768px) {
+  .search,
+  .header-trigger span,
+  .header-trigger .star,
+  .user-name,
+  .logo-area img {
+    display: none;
+  }
+}

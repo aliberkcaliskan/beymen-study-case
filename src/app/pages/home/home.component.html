@@ -1,0 +1,9 @@
+<app-dashboard [headerData]="headerData"></app-dashboard>
+
+
+<app-filter (filterChange)="handleFilterChange($event)"></app-filter>
+
+
+<app-order-table [tableData]="tableData" [totalRecords]="totalRecords" [loading]="loading" [pageSize]="pageSize"
+  [pageNumber]="pageNumber" (pageChange)="onPageChange($event)">
+</app-order-table>

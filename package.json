@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json-server": "node json-server/server.js",
+    "dev": "concurrently \"ng serve\" \"npm run json-server\""
   },
   "private": true,
   "dependencies": {
@@ -18,6 +20,9 @@
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
+    "gojs-angular": "^2.1.2",
+    "json-server": "^0.16.3",
+    "ng-zorro-antd": "^19.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
